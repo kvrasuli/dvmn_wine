@@ -26,6 +26,7 @@ python main.py --txp wine_example.xlsx
 Python 3 должен быть установлен. Установить зависимости:
 ```
 pip install -r requirements.txt
+```
 
 ## Цели проекта
 
