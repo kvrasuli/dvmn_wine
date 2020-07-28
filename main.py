@@ -17,7 +17,7 @@ env = Environment(
 )
 
 template = env.get_template('template.html')
-excel_data_df = pandas.read_excel(test_xls_path)
+excel_data_df = pandas.read_excel(test_xls_path, keep_default_na=False)
 wines_json_string = excel_data_df.to_json(orient='records')
 wines = pandas.read_json(wines_json_string).to_dict(orient='records')
 
