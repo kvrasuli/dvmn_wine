@@ -5,16 +5,11 @@ import pandas
 import xlrd
 from collections import defaultdict
 import argparse
-from dotenv import load_dotenv
 import os
 
 parser = argparse.ArgumentParser(description='Elite wines')
-parser.add_argument('--txp', help='Your path to test xls file')
-test_xls_path = parser.parse_args().txp
-
-if not test_xls_path:
-    load_dotenv()
-    test_xls_path = os.getenv('LIST_OF_WINES_NAME')
+parser.add_argument('--winetable', help='Your path to test table of wines xls file', default='wine_example.xlsx')
+test_xls_path = parser.parse_args().winetable
 
 env = Environment(
     loader=FileSystemLoader('.'),
